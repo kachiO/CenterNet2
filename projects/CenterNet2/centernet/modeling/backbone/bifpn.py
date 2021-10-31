@@ -389,15 +389,15 @@ def build_resnet_bifpn_backbone(cfg, input_shape: ShapeSpec):
     bottom_up = build_resnet_backbone(cfg, input_shape)
     in_features = cfg.MODEL.FPN.IN_FEATURES
     backbone = BiFPN(
-        cfg=cfg,
-        bottom_up=bottom_up,
-        in_features=in_features,
-        out_channels=cfg.MODEL.BIFPN.OUT_CHANNELS,
-        norm=cfg.MODEL.BIFPN.NORM,
-        num_levels=cfg.MODEL.BIFPN.NUM_LEVELS,
-        num_bifpn=cfg.MODEL.BIFPN.NUM_BIFPN,
-        separable_conv=cfg.MODEL.BIFPN.SEPARABLE_CONV,
-    )
+                    cfg=cfg,
+                    bottom_up=bottom_up,
+                    in_features=in_features,
+                    out_channels=cfg.MODEL.BIFPN.OUT_CHANNELS,
+                    norm=cfg.MODEL.BIFPN.NORM,
+                    num_levels=cfg.MODEL.BIFPN.NUM_LEVELS,
+                    num_bifpn=cfg.MODEL.BIFPN.NUM_BIFPN,
+                    separable_conv=cfg.MODEL.BIFPN.SEPARABLE_CONV,
+                )
     return backbone
 
 @BACKBONE_REGISTRY.register()
@@ -413,13 +413,13 @@ def build_p37_dla_bifpn_backbone(cfg, input_shape: ShapeSpec):
     assert cfg.MODEL.BIFPN.NUM_LEVELS == 5
 
     backbone = BiFPN(
-        cfg=cfg,
-        bottom_up=bottom_up,
-        in_features=in_features,
-        out_channels=cfg.MODEL.BIFPN.OUT_CHANNELS,
-        norm=cfg.MODEL.BIFPN.NORM,
-        num_levels=cfg.MODEL.BIFPN.NUM_LEVELS,
-        num_bifpn=cfg.MODEL.BIFPN.NUM_BIFPN,
-        separable_conv=cfg.MODEL.BIFPN.SEPARABLE_CONV,
-    )
+                    cfg=cfg,
+                    bottom_up=bottom_up,
+                    in_features=in_features,
+                    out_channels=cfg.MODEL.BIFPN.OUT_CHANNELS,
+                    norm=cfg.MODEL.BIFPN.NORM,
+                    num_levels=cfg.MODEL.BIFPN.NUM_LEVELS,
+                    num_bifpn=cfg.MODEL.BIFPN.NUM_BIFPN,
+                    separable_conv=cfg.MODEL.BIFPN.SEPARABLE_CONV,
+                )
     return backbone
